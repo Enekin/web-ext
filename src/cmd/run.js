@@ -27,6 +27,7 @@ export type CmdRunParams = {|
   browserConsole: boolean,
   pref?: FirefoxPreferences,
   firefox: string,
+  firefoxArg?: Array<string>,
   firefoxProfile?: string,
   ignoreFiles?: Array<string>,
   keepProfileChanges: boolean,
@@ -62,6 +63,7 @@ export default async function run(
     browserConsole = false,
     pref,
     firefox,
+    firefoxArg,
     firefoxProfile,
     keepProfileChanges = false,
     ignoreFiles,
@@ -115,6 +117,7 @@ export default async function run(
       ...commonRunnerParams,
 
       // Firefox specific CLI options.
+      firefoxArg,
       firefoxBinary: firefox,
       profilePath: firefoxProfile,
       customPrefs,

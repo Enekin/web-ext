@@ -433,6 +433,12 @@ Example: $0 --help run.
         demand: false,
         type: 'string',
       },
+      'firefox-arg': {
+        alias: 'arg',
+        describe: 'Supply an extra argument to Firefox.',
+        demand: false,
+        type: 'array',
+      },
       'firefox-profile': {
         alias: 'p',
         describe: 'Run Firefox using a copy of this profile. The profile ' +

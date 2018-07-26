@@ -33,6 +33,7 @@ import type {FirefoxInfo} from '../firefox/index'; // eslint-disable-line import
 type FirefoxDesktopSpecificRunnerParams = {|
   customPrefs?: FirefoxPreferences,
   browserConsole: boolean,
+  firefoxArg: Array<string>,
   firefoxBinary: string,
   preInstall: boolean,
 
@@ -212,6 +213,7 @@ export class FirefoxDesktopExtensionRunner {
     const {
       browserConsole,
       extensions,
+      firefoxArg,
       firefoxBinary,
       preInstall,
       startUrl,
@@ -228,6 +230,12 @@ export class FirefoxDesktopExtensionRunner {
       const urls = Array.isArray(startUrl) ? startUrl : [startUrl];
       for (const url of urls) {
         binaryArgs.push('--url', url);
+      }
+    }
+    if (firefoxArg) {
+      const args = Array.isArray(firefoxArg) ? firefoxArg : [firefoxArg];
+      for (const arg of args) {
+        binaryArgs.push(arg);
       }
     }
 
