@@ -4912,7 +4912,7 @@ var Program = exports.Program = function () {
             _ref3$shouldExitProgr = _ref3.shouldExitProgram,
             shouldExitProgram = _ref3$shouldExitProgr === undefined ? true : _ref3$shouldExitProgr,
             _ref3$globalEnv = _ref3.globalEnv,
-            globalEnv = _ref3$globalEnv === undefined ? "development" : _ref3$globalEnv;
+            globalEnv = _ref3$globalEnv === undefined ? "production" : _ref3$globalEnv;
 
         var argv, cmd, version, runCommand, adjustedArgv, configFiles, discoveredConfigs, niceFileList;
         return _regenerator2.default.wrap(function _callee$(_context) {
@@ -5071,7 +5071,7 @@ var Program = exports.Program = function () {
 function defaultVersionGetter(absolutePackageDir) {
   var _ref4 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
       _ref4$globalEnv = _ref4.globalEnv,
-      globalEnv = _ref4$globalEnv === undefined ? "development" : _ref4$globalEnv;
+      globalEnv = _ref4$globalEnv === undefined ? "production" : _ref4$globalEnv;
 
   if (globalEnv === 'production') {
     log.debug('Getting the version from package.json');
